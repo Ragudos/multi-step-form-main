@@ -27,7 +27,7 @@
 }
 
 @media only screen and (min-width: 1440px) {
-    .form-card {
+    .form-card, #thank-you {
         min-width: calc(var(--desktop-size) * 0.375);
         min-height: auto;
     }
