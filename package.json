@@ -1,0 +1,14 @@
+{
+  "name": "multi-step-form-main",
+  "packageManager": "yarn@3.6.4",
+  "type": "module",
+  "scripts": {
+    "dev": "node esbuild.dev.js",
+    "build": "node esbuild.build.js",
+    "format": "prettier -w \"**/*.{ts,tsx,js,jsx,html,css,astro}\""
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.5",
+    "prettier": "^3.0.3"
+  }
+}

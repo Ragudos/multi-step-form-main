@@ -1,0 +1,11 @@
+.summary-card {
+    padding: var(--base-font-size);
+}
+
+#change-plan-btn {
+    width: fit-content;
+}
+
+#total-cost {
+    padding-inline: var(--base-font-size);
+}

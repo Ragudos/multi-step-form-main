@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/assets/images/favicon-32x32.png" />
+
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <link rel="preload" as="style" href="./src/styles/fonts.css" />
+  <link rel="stylesheet" href="./src/styles/globals.css" />
+  <link rel="stylesheet" href="./src/styles/colors.css" />
+  <link rel="stylesheet" href="./src/styles/styles.css" />
+  <link rel="stylesheet" href="./src/styles/steps.css" />
+  <link rel="stylesheet" href="./src/styles/plan.css" />
+  <link rel="stylesheet" href="./src/styles/addons.css" />
+  <link rel="stylesheet" href="./src/styles/switch.css" />
+  <link rel="stylesheet" href="./src/styles/summary.css">
+
+  <script src="./src/js/index.js" type="module"></script>
+</head>
+
+<body style="display: none">
+  <main class="container grid place-items-center">
+    <section class="card gap-half flex justify-between flex-col desktop-flex-row"
+      aria-labelledby="section-title-subscription-form">
+      <h1 class="sr-only" id="section-title-subscription-form">Subscription Form</h1>
+
+      <div class="relative steps-container text-neutral-white">
+        <picture class="absolute">
+          <source srcset="/public/assets/images/bg-sidebar-desktop.svg" media="(min-width: 1440px)" />
+          <img src="/public/assets/images/bg-sidebar-mobile.svg" alt="Background Brand Image" width="375" height="172"
+            loading="eager" decoding="async" />
+        </picture>
+
+        <ul id="current-step-indicator-list" class="flex desktop-flex-col justify-center">
+          <li data-step="personal-info" aria-current="step" class="flex gap items-center">
+            <div class="bold step-circle rounded-circle grid place-items-center">
+              <span> 1 </span>
+            </div>
+
+            <div class="flex flex-col hide-on-mobile">
+              <small style="--_text-opacity: 0.675" class="text-neutral-light-gray medium">STEP 1</small>
+              <div>
+                <strong>YOUR INFO</strong>
+              </div>
+            </div>
+          </li>
+
+          <li data-step="plan" class="flex gap items-center">
+            <div class="bold step-circle rounded-circle grid place-items-center">
+              <span> 2 </span>
+            </div>
+
+            <div class="flex flex-col hide-on-mobile">
+              <small style="--_text-opacity: 0.675" class="text-neutral-light-gray medium">STEP 2</small>
+              <div>
+                <strong>SELECT PLAN</strong>
+              </div>
+            </div>
+          </li>
+
+          <li data-step="add-ons" class="flex gap items-center">
+            <div class="bold step-circle rounded-circle grid place-items-center">
+              <span> 3 </span>
+            </div>
+
+            <div class="flex flex-col hide-on-mobile">
+              <small style="--_text-opacity: 0.675" class="text-neutral-light-gray medium">STEP 3</small>
+              <div>
+                <strong>ADD-ONS</strong>
+              </div>
+            </div>
+          </li>
+
+          <li data-step="summary" class="flex gap items-center">
+            <div class="bold step-circle rounded-circle grid place-items-center">
+              <span> 4 </span>
+            </div>
+
+            <div class="flex flex-col hide-on-mobile">
+              <small style="--_text-opacity: 0.675" class="text-neutral-light-gray medium">STEP 4</small>
+              <div>
+                <strong>SUMMARY</strong>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <form data-mode="monthly" id="subscription-form" class="form-card flex justify-between flex-col gap-half-and-one">
+        <section id="personal-info" aria-hidden="false" aria-describedby="personal-info-label"
+          aria-labelledby="personal-info-title" class="flex justify-between flex-col">
+          <div>
+            <h2 id="personal-info-title" class="heading">Personal info</h2>
+            <p id="personal-info-label" class="text-neutral-cool-gray">
+              Please provide your name, email address, and phone number
+            </p>
+          </div>
+
+          <div class="section-of-input flex flex-col">
+            <div>
+              <div class="label-container flex justify-between flex-wrap gap-half">
+                <label class="medium" for="name-input">
+                  <small>Name</small>
+                </label>
+                <span data-error="name-input"></span>
+              </div>
+              <input data-label="Username" type="text" id="name-input" name="username"
+                placeholder="At least 3 characters e.g. Stephen King" autocomplete="name" autocapitalize="words"
+                required />
+            </div>
+
+            <div>
+              <div class="label-container flex justify-between flex-wrap gap-half">
+                <label class="medium" for="email-input">
+                  <small>Email Address</small>
+                </label>
+                <span data-error="email-input"></span>
+              </div>
+              <input data-label="Email" type="text" id="email-input" name="email"
+                placeholder="e.g. stephenking@lorem.com" autocomplete="email" required />
+            </div>
+
+            <div>
+              <div class="label-container flex justify-between flex-wrap gap-half">
+                <label class="medium" for="phone-number-input">
+                  <small>Phone Number</small>
+                </label>
+                <span data-error="phone-number-input"></span>
+              </div>
+              <input data-label="Phone number" type="text" id="phone-number-input" name="phone-number"
+                placeholder="Philippine Format e.g. +63 9234 567 890" required />
+            </div>
+          </div>
+        </section>
+
+        <section id="plan" aria-hidden="true" aria-describedby="plan-label" aria-labelledby="plan-title"
+          class="flex justify-between flex-col">
+          <div>
+            <h2 id="plan-title" class="heading">Select your plan</h2>
+            <p id="plan-label" class="text-neutral-cool-gray">
+              You have the option of monthly or yearly billing.
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-half-and-one">
+            <span data-error="plan"></span>
+            <ul id="list-of-plans" class="flex flex-col desktop-flex-row gap-half">
+              <li>
+                <button type="button" data-tier="arcade"
+                  class="plan-btn flex desktop-flex-col justify-between gap-half">
+                  <div class="icon-container">
+                    <img src="/public/assets/images/icon-arcade.svg" alt="Arcade Icon" width="32" height="32" />
+                  </div>
+
+                  <div class="flex flex-col gap-half">
+                    <div class="big bold">Arcade</div>
+                    <div class="flex flex-col gap-quarter" data-yearly>
+                      <div class="text-neutral-cool-gray">$90/yr</div>
+                      <small>2 months free</small>
+                    </div>
+                    <div class="flex flex-col" data-monthly>
+                      <div class="text-neutral-cool-gray">$9/mo</div>
+                    </div>
+                  </div>
+                </button>
+              </li>
+              <li>
+                <button type="button" data-tier="advanced"
+                  class="plan-btn flex desktop-flex-col justify-between gap-half">
+                  <div class="icon-container">
+                    <img src="/public/assets/images/icon-advanced.svg" alt="Advanced Icon" width="32" height="32" />
+                  </div>
+
+                  <div class="flex flex-col gap-half">
+                    <div class="big bold">Advanced</div>
+                    <div class="flex flex-col gap-quarter" data-yearly>
+                      <div class="text-neutral-cool-gray">$120/yr</div>
+                      <small>2 months free</small>
+                    </div>
+                    <div class="flex flex-col" data-monthly>
+                      <div class="text-neutral-cool-gray">$12/mo</div>
+                    </div>
+                  </div>
+                </button>
+              </li>
+              <li>
+                <button type="button" data-tier="pro" class="plan-btn flex desktop-flex-col justify-between gap-half">
+                  <div class="icon-container">
+                    <img src="/public/assets/images/icon-pro.svg" alt="Advanced Icon" width="32" height="32" />
+                  </div>
+
+                  <div class="flex flex-col gap-half">
+                    <div class="big bold">Pro</div>
+                    <div class="flex flex-col gap-quarter" data-yearly>
+                      <div class="text-neutral-cool-gray">$150/yr</div>
+                      <small>2 months free</small>
+                    </div>
+                    <div class="flex flex-col" data-monthly>
+                      <div class="text-neutral-cool-gray">$15/mo</div>
+                    </div>
+                  </div>
+                </button>
+              </li>
+            </ul>
+            <div id="yearly-monthly-switch-container"
+              class="padding-quarter rounded-half gap-half-and-one bg-neutral-magnolia flex justify-center items-center">
+              <div data-chosen="true" class="bold" data-plan="monthly">
+                <small>Monthly</small>
+              </div>
+
+              <button id="yearly-monthly-switch" type="button" class="switch">
+                <span class="switch-circle"></span>
+              </button>
+
+              <div class="bold" data-plan="yearly">
+                <small> Yearly</small>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="add-ons" aria-hidden="true" class="flex justify-between flex-col" aria-describedby="add-ons-label"
+          aria-labelledby="add-ons-title">
+          <div>
+            <h2 id="add-ons-title" class="heading">Pick add-ons</h2>
+            <p id="add-ons-label" class="text-neutral-cool-gray">
+              Add-ons help enhance your gaming experience.
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-half-and-one">
+            <ul id="list-of-add-ons" class="flex flex-col gap">
+              <li>
+                <button type="button" data-addon="online-service" class="add-on-btn flex justify-between">
+                  <div class="icon-container">
+                    <span data-checked="true" data-checkmark>
+                      <img src="/public/assets/images/icon-checkmark.svg" alt="Checkmark" width="14" height="14" />
+                    </span>
+                  </div>
+
+                  <div class="flex flex-col gap-half flex-1">
+                    <div class="big bold">Online service</div>
+                    <p class="text-neutral-cool-gray">
+                      Access to multiplayer games
+                    </p>
+                  </div>
+
+                  <div>
+                    <div data-yearly>
+                      <div class="text-primary-purplish-blue">
+                        +$10/yr
+                      </div>
+                    </div>
+                    <div data-monthly>
+                      <div class="text-primary-purplish-blue">+$1/mo</div>
+                    </div>
+                  </div>
+                </button>
+              </li>
+
+              <li>
+                <button type="button" data-addon="larger-storage" class="add-on-btn flex justify-between">
+                  <div class="icon-container">
+                    <span data-checked="true" data-checkmark>
+                      <img src="/public/assets/images/icon-checkmark.svg" alt="Checkmark" width="14" height="14" />
+                    </span>
+                  </div>
+
+                  <div class="flex flex-col gap-half flex-1">
+                    <div class="big bold">Larger storage</div>
+                    <p class="text-neutral-cool-gray">
+                      Extra 1TB of cloud save
+                    </p>
+                  </div>
+
+                  <div>
+                    <div data-yearly>
+                      <div class="text-primary-purplish-blue">
+                        +$20/yr
+                      </div>
+                    </div>
+                    <div data-monthly>
+                      <div class="text-primary-purplish-blue">+$2/mo</div>
+                    </div>
+                  </div>
+                </button>
+              </li>
+
+              <li>
+                <button type="button" data-addon="customizable-profile" class="add-on-btn flex justify-between">
+                  <div class="icon-container">
+                    <span data-checkmark>
+                      <img src="/public/assets/images/icon-checkmark.svg" alt="Checkmark" width="14" height="14" />
+                    </span>
+                  </div>
+
+                  <div class="flex flex-col gap-half flex-1">
+                    <div class="big bold">Customizable profile</div>
+                    <p class="text-neutral-cool-gray">
+                      Custom theme on your profile
+                    </p>
+                  </div>
+
+                  <div>
+                    <div data-yearly>
+                      <div class="text-primary-purplish-blue">
+                        +$20/yr
+                      </div>
+                    </div>
+                    <div data-monthly>
+                      <div class="text-primary-purplish-blue">+$2/mo</div>
+                    </div>
+                  </div>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="summary" aria-hidden="true" class="gap-half-and-one flex justify-between flex-col"
+          aria-describedby="add-ons-label" aria-labelledby="add-ons-title">
+          <div>
+            <h2 id="summary-title" class="heading">Finishing up</h2>
+            <p id="summary-label" class="text-neutral-cool-gray">
+              Double-check everything looks OK before confirming.
+            </p>
+          </div>
+
+          <div class="summary-card rounded-half bg-neutral-magnolia">
+            <div class="flex items-center justify-between gap-half">
+              <div class="small flex flex-col gap-quarter">
+                <div class="bold" id="chosen-plan"></div>
+                <button type="button" id="change-plan-btn"
+                  class="text-underline text-neutral-cool-gray no-padding no-min-height no-min-width">
+                  Change
+                </button>
+              </div>
+              <div aria-label="Price of chosen plan" class="bold" id="chosen-plan-cost"></div>
+            </div>
+
+            <hr />
+
+            <div id="chosen-add-ons" class="text-neutral-cool-gray flex justify-center flex-col gap-half">
+              <small>No chosen add-on</small>
+            </div>
+          </div>
+
+          <div aria-label="Total cost of chosen plan plus add-ons depending either monthly or yearly"
+            class="flex justify-between gap-half flex-wrap" id="total-cost"></div>
+        </section>
+
+        <div id="button-steps-container" class="bg-neutral-white flex justify-end">
+          <button type="button" class="no-padding text-neutral-cool-gray" id="back-btn" style="display: none">
+            Go Back
+          </button>
+
+          <button type="submit" id="submit-btn" class="bg-primary-marine-blue text-neutral-white">
+            Confirm
+          </button>
+        </div>
+      </form>
+
+      <article hidden id="thank-you" class="flex flex-col justify-center gap items-center">
+        <div class="icon-container">
+          <img src="/public/assets/images/icon-thank-you.svg" alt="Thank You Icon" width="56" height="56"
+            loading="lazy" decoding="async" />
+        </div>
+        <h2 class="heading bold">Thank you!</h2>
+        <p class="text-neutral-cool-gray">
+          Thanks for confirming your subscription! We hope you have fun
+          using our platform. If you ever need support, please feel free
+          to email us at support@loremgaming.com.
+        </p>
+
+        <button type="reset" id="reset-btn">
+          Fill up another form
+        </button>
+      </article>
+    </section>
+  </main>
+
+  <footer class="flex flex-col gap items-center">
+    <div>
+      This does not send data to any server and uses sessionStorage to temporarily
+      store your input to load it when reloading the page and to display it in the summary section.
+      <br />
+      To know about sessionStorage,
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage" target="_blank" rel="noreferrer">
+        click here
+      </a>
+    </div>
+
+    <div class="flex flex-col gap-half">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>
+      Coded by <a href="https://youtube.com/@programmers_sanctuary?si=eBEJ2GG7sEsiLUFT" target="_blank" rel="noreferrer">Programmer's Sanctuary</a>
+    </div>
+  </footer>
+</body>
+
+</html>

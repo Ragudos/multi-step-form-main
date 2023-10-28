@@ -1,0 +1,36 @@
+.switch {
+    border-radius: calc(var(--base-border-radius) * 2);
+
+    background-color: hsl(var(--clr-primary-marine-blue) / var(--_bg-opacity, 1));
+
+    position: relative;
+
+    min-width: calc(var(--base-font-size) * 2);
+    min-height: var(--base-font-size);
+
+    padding: 0;
+}
+
+.switch .switch-circle {
+    background-color: hsl(var(--clr-neutral-white) / var(--_bg-opacity, 1));
+
+    border-radius: 50%;
+
+    width: calc(var(--base-font-size) * 0.675);
+    height: calc(var(--base-font-size) * 0.675);
+
+    position: absolute;
+    left: 4px;
+    top: 50%;
+
+    will-change: transform;
+    transition-property: transform;
+    transition-duration: var(--base-transition-duration, 250ms);
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    transform: translateX(var(--_x, 0)) translateY(var(--_y, -50%));
+}
+
+.switch[data-active="true"] .switch-circle {
+    --_x: 100%;
+}
