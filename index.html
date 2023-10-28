@@ -151,61 +151,62 @@
             <span data-error="plan"></span>
             <ul id="list-of-plans" class="flex flex-col desktop-flex-row gap-half">
               <li>
-                <label for="arcade-tier" class="plan-btn flex desktop-flex-col justify-between gap-half" aria-labelledby="arcade-tier-label">
-                  <div class="icon-container">
-                    <img src="/public/assets/images/icon-arcade.svg" alt="Arcade Icon" width="32" height="32" />
-                  </div>
+                <label for="arcade-tier" class="plan-btn flex desktop-flex-col justify-between gap-half"
+                  aria-labelledby="arcade-tier-label">
+                  <img src="/public/assets/images/icon-arcade.svg" alt="Arcade Icon" style="width: auto; height: auto;"
+                    width="32" height="32" />
 
-                  <div class="flex flex-col gap-half">
-                    <div class="big bold" id="arcade-tier-label">Arcade</div>
-                    <div class="flex flex-col gap-quarter" data-yearly>
-                      <div class="text-neutral-cool-gray">$90/yr</div>
+                  <span class="flex flex-col gap-half">
+                    <strong class="big" id="arcade-tier-label">Arcade</strong>
+                    <span class="flex flex-col gap-quarter" data-yearly>
+                      <span class="text-neutral-cool-gray">$90/yr</span>
                       <small>2 months free</small>
-                    </div>
-                    <div class="flex flex-col" data-monthly>
-                      <div class="text-neutral-cool-gray">$9/mo</div>
-                    </div>
-                  </div>
+                    </span>
+                    <span class="flex flex-col" data-monthly>
+                      <span class="text-neutral-cool-gray">$9/mo</span>
+                    </span>
+                  </span>
 
                   <input type="radio" name="tier" id="arcade-tier" aria-labelledby="arcade-tier-label" />
                 </label>
               </li>
               <li>
-                <label for="advanced-tier" class="plan-btn flex desktop-flex-col justify-between gap-half" aria-labelledby="advanced-tier-label">
-                  <div class="icon-container">
-                    <img src="/public/assets/images/icon-advanced.svg" alt="Advanced Icon" width="32" height="32" />
-                  </div>
+                <label for="advanced-tier" class="plan-btn flex desktop-flex-col justify-between gap-half"
+                  aria-labelledby="advanced-tier-label">
+                  <img src="/public/assets/images/icon-advanced.svg" style="width: auto; height: auto;"
+                    alt="Advanced Icon" width="32" height="32" />
 
-                  <div class="flex flex-col gap-half">
-                    <div class="big bold" id="advanced-tier-label">Advanced</div>
-                    <div class="flex flex-col gap-quarter" data-yearly>
-                      <div class="text-neutral-cool-gray">$120/yr</div>
+                  <span class="flex flex-col gap-half">
+                    <strong class="big" id="advanced-tier-label">Advanced</strong>
+                    <span class="flex flex-col gap-quarter" data-yearly>
+                      <span class="text-neutral-cool-gray">$120/yr</span>
                       <small>2 months free</small>
-                    </div>
-                    <div class="flex flex-col" data-monthly>
-                      <div class="text-neutral-cool-gray">$12/mo</div>
-                    </div>
-                  </div>
+                    </span>
+                    <span class="flex flex-col" data-monthly>
+                      <span class="text-neutral-cool-gray">$12/mo
+                      </span>
+                    </span>
+                  </span>
 
                   <input type="radio" name="tier" id="advanced-tier" aria-labelledby="advanced-tier-label" />
                 </label>
               </li>
               <li>
-                <label for="pro-tier" class="plan-btn flex desktop-flex-col justify-between gap-half" aria-labelledby="pro-tier-label">
-                  <div class="icon-container">
-                    <img src="/public/assets/images/icon-pro.svg" alt="Advanced Icon" width="32" height="32" />
-                  </div>
+                <label for="pro-tier" class="plan-btn flex desktop-flex-col justify-between gap-half"
+                  aria-labelledby="pro-tier-label">
+                  <img src="/public/assets/images/icon-pro.svg" style="width: auto; height: auto;" alt="Advanced Icon"
+                    width="32" height="32" />
 
-                  <div class="flex flex-col gap-half">
-                    <div class="big bold" id="pro-tier-label">Pro</div>
-                    <div class="flex flex-col gap-quarter" data-yearly>
-                      <div class="text-neutral-cool-gray">$150/yr</div>
+                  <span class="flex flex-col gap-half">
+                    <strong class="big" id="pro-tier-label">Pro</strong>
+                    <span class="flex flex-col gap-quarter" data-yearly>
+                      <span class="text-neutral-cool-gray">$150/yr</span>
                       <small>2 months free</small>
-                    </div>
-                    <div class="flex flex-col" data-monthly>
-                      <div class="text-neutral-cool-gray">$15/mo</div>
-                    </div>
-                  </div>
+                    </span>
+                    <span class="flex flex-col" data-monthly>
+                      <span class="text-neutral-cool-gray">$15/mo</span>
+                    </span>
+                  </span>
 
                   <input type="radio" name="tier" id="pro-tier" aria-labelledby="pro-tier-label" />
                 </label>
@@ -213,17 +214,18 @@
             </ul>
             <div id="yearly-monthly-switch-container"
               class="padding-quarter rounded-half gap-half-and-one bg-neutral-magnolia flex justify-center items-center">
-              <div data-chosen="true" class="bold" data-plan="monthly">
+              <b data-chosen="true" data-plan="monthly">
                 <small>Monthly</small>
-              </div>
+              </b>
 
-              <button id="yearly-monthly-switch" type="button" class="switch" aria-label="A switch button to choose between monthly or yearly rates">
+              <button id="yearly-monthly-switch" type="button" class="switch"
+                aria-label="A switch button to choose between monthly or yearly rates">
                 <span class="switch-circle"></span>
               </button>
 
-              <div class="bold" data-plan="yearly">
-                <small> Yearly</small>
-              </div>
+              <b data-plan="yearly">
+                <small>Yearly</small>
+              </b>
             </div>
           </div>
         </section>
@@ -240,107 +242,86 @@
           <div class="flex flex-col gap-half-and-one">
             <ul id="list-of-add-ons" class="flex flex-col gap">
               <li>
-                <label for="online-service-addon" aria-labelledby="online-service-label" class="add-on-btn flex justify-between">
-                  <div class="icon-container">
-                    <span data-checked="true" data-checkmark>
-                      <img src="/public/assets/images/icon-checkmark.svg" alt="Checkmark" width="14" height="14" />
-                    </span>
-                  </div>
+                <label for="online-service-addon" aria-labelledby="online-service-label"
+                  class="add-on-btn flex justify-between">
+                  <span class="icon-container" data-checked="true" data-checkmark>
+                    <img src="/public/assets/images/icon-checkmark.svg" alt="Checkmark" width="14" height="14" />
+                  </span>
 
-                  <div class="flex flex-col gap-half flex-1">
-                    <div class="big bold" id="online-service-label">Online service</div>
+                  <span class="flex flex-col gap-half flex-1">
+                    <strong class="big" id="online-service-label">Online service</strong>
                     <p class="text-neutral-cool-gray">
                       Access to multiplayer games
                     </p>
-                  </div>
+                  </span>
 
-                  <div>
-                    <div data-yearly>
-                      <div class="text-primary-purplish-blue">
-                        +$10/yr
-                      </div>
-                    </div>
-                    <div data-monthly>
-                      <div class="text-primary-purplish-blue">+$1/mo</div>
-                    </div>
-                  </div>
+                  <span data-yearly>
+                    <span class="text-primary-purplish-blue">
+                      +$10/yr
+                    </span>
+                  </span>
+                  <span data-monthly>
+                    <span class="text-primary-purplish-blue">+$1/mo</span>
+                  </span>
 
-                  <input
-                    type="checkbox"
-                    id="online-service-addon"
-                    name="online-service"
-                    aria-labelledby="online-service-label"
-                  />
+                  <input type="checkbox" id="online-service-addon" name="online-service"
+                    aria-labelledby="online-service-label" />
                 </label>
               </li>
 
               <li>
-                <label for="larger-storage-addon" aria-labelledby="larger-storage-label" class="add-on-btn flex justify-between">
-                  <div class="icon-container">
-                    <span data-checked="true" data-checkmark>
-                      <img src="/public/assets/images/icon-checkmark.svg" alt="Checkmark" width="14" height="14" />
-                    </span>
-                  </div>
+                <label for="larger-storage-addon" aria-labelledby="larger-storage-label"
+                  class="add-on-btn flex justify-between">
+                  <span class="icon-container" data-checked="true" data-checkmark>
+                    <img src="/public/assets/images/icon-checkmark.svg" alt="Checkmark" width="14" height="14" />
+                  </span>
 
-                  <div class="flex flex-col gap-half flex-1">
-                    <div class="big bold" id="larger-storage-label">Larger storage</div>
+                  <span class="flex flex-col gap-half flex-1">
+                    <strong class="big" id="larger-storage-label">Larger storage</strong>
                     <p class="text-neutral-cool-gray">
                       Extra 1TB of cloud save
                     </p>
-                  </div>
+                  </span>
 
-                  <div>
-                    <div data-yearly>
-                      <div class="text-primary-purplish-blue">
-                        +$20/yr
-                      </div>
-                    </div>
-                    <div data-monthly>
-                      <div class="text-primary-purplish-blue">+$2/mo</div>
-                    </div>
-                  </div>
+                  <span data-yearly>
+                    <span class="text-primary-purplish-blue">
+                      +$20/yr
+                    </span>
+                  </span>
+                  <span data-monthly>
+                    <span class="text-primary-purplish-blue">+$2/mo</span>
+                  </span>
 
-                  <input
-                    type="checkbox"
-                    id="larger-storage-addon"
-                    name="larger-storage"
-                    aria-labelledby="larger-storage-label"
-                  />
+                  <input type="checkbox" id="larger-storage-addon" name="larger-storage"
+                    aria-labelledby="larger-storage-label" />
                 </label>
               </li>
 
               <li>
-                <label for="customizable-profile-addon" aria-labelledby="customizable-profile-label" class="add-on-btn flex justify-between">
-                  <div class="icon-container">
-                    <span data-checkmark>
-                      <img src="/public/assets/images/icon-checkmark.svg" alt="Checkmark" width="14" height="14" />
-                    </span>
-                  </div>
+                <label for="customizable-profile-addon" aria-labelledby="customizable-profile-label"
+                  class="add-on-btn flex justify-between">
+                  <span class="icon-container" data-checkmark>
+                    <img src="/public/assets/images/icon-checkmark.svg" alt="Checkmark" width="14" height="14" />
+                  </span>
 
-                  <div class="flex flex-col gap-half flex-1">
-                    <div class="big bold" id="customizable-profile-label">Customizable profile</div>
+                  <span class="flex flex-col gap-half flex-1">
+                    <strong class="big" id="customizable-profile-label">Customizable profile</strong>
                     <p class="text-neutral-cool-gray">
                       Custom theme on your profile
                     </p>
-                  </div>
+                  </span>
 
-                  <div>
-                    <div data-yearly>
-                      <div class="text-primary-purplish-blue">
-                        +$20/yr
-                      </div>
-                    </div>
-                    <div data-monthly>
-                      <div class="text-primary-purplish-blue">+$2/mo</div>
-                    </div>
-                  </div>
+                  <span data-yearly>
+                    <span class="text-primary-purplish-blue">
+                      +$20/yr
+                    </span>
+                  </span>
+                  <span data-monthly>
+                    <span class="text-primary-purplish-blue">+$2/mo</span>
+                  </span>
 
-                  <input
-                    type="checkbox"
-                    id="customizable-profile-addon"
-                    name="customizable-profile"
-                    aria-labelledby="customizable-profile-label"
-                  />
+                  <input type="checkbox" id="customizable-profile-addon" name="customizable-profile"
+                    aria-labelledby="customizable-profile-label" />
                 </label>
               </li>
             </ul>

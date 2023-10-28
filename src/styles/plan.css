@@ -1,4 +1,5 @@
-#plan #list-of-plans li {
+#plan #list-of-plans li,
+#plan #list-of-plans li > span {
     width: 100%;
 }
 
