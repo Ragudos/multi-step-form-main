@@ -19,12 +19,9 @@
 
 .form-card,
 #thank-you {
-    padding: clamp(
-            calc(var(--base-font-size) * 0.25),
+    padding: clamp(calc(var(--base-font-size) * 0.25),
             1px + 0.5vw,
-            calc(var(--base-font-size) * 1.25)
-        )
-        clamp(calc(var(--base-font-size) * 0.75), 1px + 0.5vw, calc(var(--base-font-size) * 1.75));
+            calc(var(--base-font-size) * 1.25)) clamp(calc(var(--base-font-size) * 0.75), 2px + 1vw, calc(var(--base-font-size) * 2.25));
 
     min-height: max(50dvh, 400px);
 }
@@ -36,10 +33,20 @@
     }
 }
 
-.form-card > section, #thank-you {
+.form-card>section,
+#thank-you {
     z-index: 2;
-    padding: clamp(calc(var(--base-font-size) * 2), 1px + 0.5vw, calc(var(--base-font-size) * 3))
-        clamp(calc(var(--base-font-size) * 1.5), 1px + 0.5vw, calc(var(--base-font-size) * 2.5));
+    padding:
+        clamp(
+            calc(var(--base-font-size) * 2),
+            1px + 0.5vw,
+            calc(var(--base-font-size) * 3)
+        )
+        clamp(
+            calc(var(--base-font-size) * 1.5),
+            1px + 0.5vw,
+            calc(var(--base-font-size) * 2.5)
+        );
 
     background-color: hsl(var(--clr-neutral-white) / var(--_bg-opacity, 1));
 
@@ -54,12 +61,14 @@
     margin-inline: auto;
 }
 
-.form-card > section:not([aria-hidden=false]) {
+.form-card>section:not([aria-hidden=false]) {
     display: none;
 }
 
 @media only screen and (min-width: 1440px) {
-    .form-card > section, #thank-you {
+
+    .form-card>section,
+    #thank-you {
         border-radius: 0;
         box-shadow: none;
         margin-top: 0;
