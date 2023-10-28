@@ -46,14 +46,14 @@
     }
 }
 
-.add-on-btn .icon-container [data-checkmark] img {
+.add-on-btn .icon-container[data-checkmark] img {
     object-fit: contain;
 
     width: auto;
     height: auto;
 }
 
-.add-on-btn .icon-container [data-checkmark] {
+.add-on-btn .icon-container[data-checkmark] {
     display: none;
 
     will-change: background-color, display;
@@ -65,7 +65,7 @@
     height: 100%;
 }
 
-.add-on-btn[data-active="true"] .icon-container [data-checkmark] {
+.add-on-btn[data-active=true] .icon-container[data-checkmark] {
     background-color: hsl(var(--clr-primary-purplish-blue));
     display: flex;
     justify-content: center;
