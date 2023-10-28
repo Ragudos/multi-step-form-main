@@ -3,11 +3,11 @@ import { getParsedStoredItemInSessionStorage } from "./utils.js";
 export function loadSavedPersonalInfoData() {
     const storedData = getParsedStoredItemInSessionStorage("formData");
 
-    if (!storedData || !storedData.data.personalInfo) {
+    if (!storedData || !storedData.data["personal-info"]) {
         return;
     }
 
-    const personalInfo = storedData.data.personalInfo;
+    const personalInfo = storedData.data["personal-info"];
     const usernameInput = document.getElementById("name-input");
     const emailInput = document.getElementById("email-input");
     const phoneInput = document.getElementById("phone-number-input");
