@@ -59,7 +59,7 @@
 
     margin-inline: auto;
 
-    width: 90%;
+    width: 100%;
 }
 
 .form-card>section:not([aria-hidden=false]) {
@@ -73,6 +73,7 @@
         box-shadow: none;
         margin-top: 0;
         gap: calc(var(--base-font-size) * 1.5);
+        width: 90%;
     }
 
     #thank-you {
