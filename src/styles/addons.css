@@ -2,7 +2,16 @@
     min-width: none;
     width: 100%;
 
+    font-weight: 700;
+
     text-align: start;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: calc(var(--base-font-size) * 0.75);
+
+    border-radius: calc(var(--base-font-size) * 0.5);
 
     border: 1px solid
         hsl(var(--_border-color, var(--clr-primary-purplish-blue)) / var(--_border-opacity, 0.25));
@@ -14,6 +23,8 @@
     );
 
     gap: var(--base-font-size);
+
+    cursor: pointer;
 }
 
 .add-on-btn > div {
@@ -65,6 +76,15 @@
 .add-on-btn[data-active="true"] {
     --_border-opacity: 1;
     background-color: hsl(var(--clr-primary-light-blue) / 0.175);
+}
+
+.add-on-btn input[type=checkbox] {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    width: 1;
+    height: 1;
+    z-index: -1;
 }
 
 #list-of-add-ons .icon-container {

@@ -4,8 +4,10 @@
 
 .plan-btn {
     width: 100%;
-    padding: var(--base-font-size) calc(var(--base-font-size) * 0.75);
+    padding: calc(var(--base-font-size) * 0.5) calc(var(--base-font-size) * 0.75);
 
+    font-weight: 700;
+    font-size: calc(var(--base-font-size) * 0.75);
     align-items: flex-start;
     justify-content: flex-start;
     text-align: start;
@@ -31,8 +33,7 @@
         var(--_ring-size, 0 0 0 0) var(--_clr-ring, transparent),
         var(--_box-shadow, 0 0 0 0);
 
-    border: 1px solid
-        hsl(var(--_border-color, var(--clr-primary-purplish-blue)) / var(--_border-opacity, 0.25));
+    border: 1px solid hsl(var(--_border-color, var(--clr-primary-purplish-blue)) / var(--_border-opacity, 0.25));
 }
 
 @media only screen and (min-width: 1440px) {
@@ -45,7 +46,7 @@
 }
 
 .plan-btn:hover,
-.plan-btn[data-chosen=true]  {
+.plan-btn[data-chosen=true] {
     --_border-opacity: 1;
 
     background-color: hsl(var(--clr-primary-purplish-blue) / 0.075);

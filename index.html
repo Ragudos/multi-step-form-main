@@ -240,7 +240,7 @@
           <div class="flex flex-col gap-half-and-one">
             <ul id="list-of-add-ons" class="flex flex-col gap">
               <li>
-                <button type="button" data-addon="online-service" class="add-on-btn flex justify-between">
+                <label for="online-service-addon" aria-labelledby="online-service-label" class="add-on-btn flex justify-between">
                   <div class="icon-container">
                     <span data-checked="true" data-checkmark>
                       <img src="/public/assets/images/icon-checkmark.svg" alt="Checkmark" width="14" height="14" />
@@ -248,7 +248,7 @@
                   </div>
 
                   <div class="flex flex-col gap-half flex-1">
-                    <div class="big bold">Online service</div>
+                    <div class="big bold" id="online-service-label">Online service</div>
                     <p class="text-neutral-cool-gray">
                       Access to multiplayer games
                     </p>
@@ -264,11 +264,18 @@
                       <div class="text-primary-purplish-blue">+$1/mo</div>
                     </div>
                   </div>
-                </button>
+
+                  <input
+                    type="checkbox"
+                    id="online-service-addon"
+                    name="online-service"
+                    aria-labelledby="online-service-label"
+                  />
+                </label>
               </li>
 
               <li>
-                <button type="button" data-addon="larger-storage" class="add-on-btn flex justify-between">
+                <label for="larger-storage-addon" aria-labelledby="larger-storage-label" class="add-on-btn flex justify-between">
                   <div class="icon-container">
                     <span data-checked="true" data-checkmark>
                       <img src="/public/assets/images/icon-checkmark.svg" alt="Checkmark" width="14" height="14" />
@@ -276,7 +283,7 @@
                   </div>
 
                   <div class="flex flex-col gap-half flex-1">
-                    <div class="big bold">Larger storage</div>
+                    <div class="big bold" id="larger-storage-label">Larger storage</div>
                     <p class="text-neutral-cool-gray">
                       Extra 1TB of cloud save
                     </p>
@@ -292,11 +299,18 @@
                       <div class="text-primary-purplish-blue">+$2/mo</div>
                     </div>
                   </div>
-                </button>
+
+                  <input
+                    type="checkbox"
+                    id="larger-storage-addon"
+                    name="larger-storage"
+                    aria-labelledby="larger-storage-label"
+                  />
+                </label>
               </li>
 
               <li>
-                <button type="button" data-addon="customizable-profile" class="add-on-btn flex justify-between">
+                <label for="customizable-profile-addon" aria-labelledby="customizable-profile-label" class="add-on-btn flex justify-between">
                   <div class="icon-container">
                     <span data-checkmark>
                       <img src="/public/assets/images/icon-checkmark.svg" alt="Checkmark" width="14" height="14" />
@@ -304,7 +318,7 @@
                   </div>
 
                   <div class="flex flex-col gap-half flex-1">
-                    <div class="big bold">Customizable profile</div>
+                    <div class="big bold" id="customizable-profile-label">Customizable profile</div>
                     <p class="text-neutral-cool-gray">
                       Custom theme on your profile
                     </p>
@@ -320,7 +334,14 @@
                       <div class="text-primary-purplish-blue">+$2/mo</div>
                     </div>
                   </div>
-                </button>
+
+                  <input
+                    type="checkbox"
+                    id="customizable-profile-addon"
+                    name="customizable-profile"
+                    aria-labelledby="customizable-profile-label"
+                  />
+                </label>
               </li>
             </ul>
           </div>
