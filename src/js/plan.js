@@ -128,8 +128,7 @@ function handleSwitchPlan() {
 
 switchBtn.addEventListener("click", handleSwitchPlan);
 
-function handleChoosePlan(e) {
-    const btn = e.srcElement;
+function handleChoosePlan(btn) {
     const storedData = getParsedStoredItemInSessionStorage("formData");
 
     if (!storedData.data["plan"]) {
@@ -141,6 +140,8 @@ function handleChoosePlan(e) {
 
     const tier = btn.getAttribute("data-tier");
 
+    console.log(btn);
+
     storedData.data["plan"]["tier"] = tier;
     setPlanTier(tier);
     setItemInSessionStorage("formData", storedData);
@@ -148,5 +149,5 @@ function handleChoosePlan(e) {
 }
 
 btnPlans.forEach((btn) => {
-    btn.addEventListener("click", handleChoosePlan);
+    btn.addEventListener("click", () => handleChoosePlan(btn));
 });
