@@ -57,10 +57,9 @@
     margin-top: calc(var(--base-font-size) * -5.5);
     gap: var(--base-font-size);
 
-    max-width: 95%;
     margin-inline: auto;
 
-    width: 100%;
+    width: 90%;
 }
 
 .form-card>section:not([aria-hidden=false]) {
@@ -74,6 +73,10 @@
         box-shadow: none;
         margin-top: 0;
         gap: calc(var(--base-font-size) * 1.5);
+    }
+
+    #thank-you {
+        width: 50%;
     }
 }
 
