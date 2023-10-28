@@ -140,8 +140,6 @@ function handleChoosePlan(btn) {
 
     const tier = btn.getAttribute("data-tier");
 
-    console.log(btn);
-
     storedData.data["plan"]["tier"] = tier;
     setPlanTier(tier);
     setItemInSessionStorage("formData", storedData);
