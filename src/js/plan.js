@@ -5,7 +5,7 @@ import {
 } from "./utils.js";
 
 const switchBtn = document.getElementById("yearly-monthly-switch");
-const btnPlans = document.querySelectorAll("#plan #list-of-plans li button");
+const radioBtnPlans = document.querySelectorAll("#plan #list-of-plans li input[type='radio']");
 
 function setPlanMode(type) {
     const currentChosenPlan = document.querySelector(
@@ -28,11 +28,15 @@ function setPlanMode(type) {
 }
 
 function setPlanTier(tier) {
-    const activeBtn = document.querySelector("#plan #list-of-plans li button[data-active='true']");
-    const btn = document.querySelector(`#plan #list-of-plans li button[data-tier='${tier}']`);
+    const activeBtn = document.querySelector("#plan #list-of-plans li input[type='radio'][checked='true']");
+    const btn = document.querySelector(`#plan #list-of-plans li input[id="${tier}-tier"]`);
+    const activeLabel = document.querySelector("#plan #list-of-plans li label[data-chosen='true']");
+    const label = document.querySelector(`#plan #list-of-plans li label[for="${tier}-tier"]`);
 
-    activeBtn?.removeAttribute("data-active");
-    btn.setAttribute("data-active", "true");
+    activeLabel?.removeAttribute("data-chosen");
+    activeBtn?.removeAttribute("checked");
+    btn?.setAttribute("checked", "true");
+    label?.setAttribute("data-chosen", "true");
 }
 
 export function loadSavedPlanData() {
@@ -71,9 +75,9 @@ export function getChosenPlan() {
     }
 
     const activeTierEl = document.querySelector(
-        "#plan #list-of-plans li button[data-active='true']",
+        "#plan #list-of-plans li input[type='radio'][checked='true']",
     );
-    const activeTier = activeTierEl?.getAttribute("data-tier");
+    const activeTier = activeTierEl?.id.split("-tier")[0];
 
     if (!activeTier) {
         return;
@@ -138,7 +142,7 @@ function handleChoosePlan(btn) {
         };
     }
 
-    const tier = btn.getAttribute("data-tier");
+    const tier = btn.id.split("-tier")[0];
 
     storedData.data["plan"]["tier"] = tier;
     setPlanTier(tier);
@@ -146,6 +150,6 @@ function handleChoosePlan(btn) {
     hideElementAndRemoveItsText(document.querySelector("[data-error='plan']"));
 }
 
-btnPlans.forEach((btn) => {
-    btn.addEventListener("click", () => handleChoosePlan(btn));
+radioBtnPlans.forEach((btn) => {
+    btn.addEventListener("change", () => handleChoosePlan(btn));
 });

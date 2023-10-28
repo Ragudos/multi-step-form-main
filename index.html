@@ -32,7 +32,8 @@
       <div class="relative steps-container text-neutral-white">
         <picture class="absolute">
           <source srcset="/public/assets/images/bg-sidebar-desktop.svg" media="(min-width: 1440px)" />
-          <img src="/public/assets/images/bg-sidebar-mobile.svg" alt="Background Brand Image" width="375" height="172"/>
+          <img src="/public/assets/images/bg-sidebar-mobile.svg" alt="Background Brand Image" width="375"
+            height="172" />
         </picture>
 
         <ul id="current-step-indicator-list" class="flex desktop-flex-col justify-center">
@@ -87,7 +88,7 @@
               </div>
             </div>
           </li>
-          </ul>
+        </ul>
       </div>
 
       <form data-mode="monthly" id="subscription-form" class="form-card flex justify-between flex-col gap-half-and-one">
@@ -150,14 +151,13 @@
             <span data-error="plan"></span>
             <ul id="list-of-plans" class="flex flex-col desktop-flex-row gap-half">
               <li>
-                <button type="button" data-tier="arcade"
-                  class="plan-btn flex desktop-flex-col justify-between gap-half">
+                <label for="arcade-tier" class="plan-btn flex desktop-flex-col justify-between gap-half" aria-labelledby="arcade-tier-label">
                   <div class="icon-container">
                     <img src="/public/assets/images/icon-arcade.svg" alt="Arcade Icon" width="32" height="32" />
                   </div>
 
                   <div class="flex flex-col gap-half">
-                    <div class="big bold">Arcade</div>
+                    <div class="big bold" id="arcade-tier-label">Arcade</div>
                     <div class="flex flex-col gap-quarter" data-yearly>
                       <div class="text-neutral-cool-gray">$90/yr</div>
                       <small>2 months free</small>
@@ -167,17 +167,17 @@
                     </div>
                   </div>
 
-                </button>
+                  <input type="radio" name="tier" id="arcade-tier" aria-labelledby="arcade-tier-label" />
+                </label>
               </li>
               <li>
-                <button type="button" data-tier="advanced"
-                  class="plan-btn flex desktop-flex-col justify-between gap-half">
+                <label for="advanced-tier" class="plan-btn flex desktop-flex-col justify-between gap-half" aria-labelledby="advanced-tier-label">
                   <div class="icon-container">
                     <img src="/public/assets/images/icon-advanced.svg" alt="Advanced Icon" width="32" height="32" />
                   </div>
 
                   <div class="flex flex-col gap-half">
-                    <div class="big bold">Advanced</div>
+                    <div class="big bold" id="advanced-tier-label">Advanced</div>
                     <div class="flex flex-col gap-quarter" data-yearly>
                       <div class="text-neutral-cool-gray">$120/yr</div>
                       <small>2 months free</small>
@@ -186,16 +186,18 @@
                       <div class="text-neutral-cool-gray">$12/mo</div>
                     </div>
                   </div>
-                </button>
+
+                  <input type="radio" name="tier" id="advanced-tier" aria-labelledby="advanced-tier-label" />
+                </label>
               </li>
               <li>
-                <button type="button" data-tier="pro" class="plan-btn flex desktop-flex-col justify-between gap-half">
+                <label for="pro-tier" class="plan-btn flex desktop-flex-col justify-between gap-half" aria-labelledby="pro-tier-label">
                   <div class="icon-container">
                     <img src="/public/assets/images/icon-pro.svg" alt="Advanced Icon" width="32" height="32" />
                   </div>
 
                   <div class="flex flex-col gap-half">
-                    <div class="big bold">Pro</div>
+                    <div class="big bold" id="pro-tier-label">Pro</div>
                     <div class="flex flex-col gap-quarter" data-yearly>
                       <div class="text-neutral-cool-gray">$150/yr</div>
                       <small>2 months free</small>
@@ -204,7 +206,9 @@
                       <div class="text-neutral-cool-gray">$15/mo</div>
                     </div>
                   </div>
-                </button>
+
+                  <input type="radio" name="tier" id="pro-tier" aria-labelledby="pro-tier-label" />
+                </label>
               </li>
             </ul>
             <div id="yearly-monthly-switch-container"
@@ -213,7 +217,7 @@
                 <small>Monthly</small>
               </div>
 
-              <button id="yearly-monthly-switch" type="button" class="switch">
+              <button id="yearly-monthly-switch" type="button" class="switch" aria-label="A switch button to choose between monthly or yearly rates">
                 <span class="switch-circle"></span>
               </button>
 

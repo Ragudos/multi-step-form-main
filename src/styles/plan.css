@@ -4,7 +4,7 @@
 
 .plan-btn {
     width: 100%;
-    padding: calc(var(--base-font-size) * 0.75) calc(var(--base-font-size) * 0.5);
+    padding: var(--base-font-size) calc(var(--base-font-size) * 0.75);
 
     align-items: flex-start;
     justify-content: flex-start;
@@ -12,6 +12,24 @@
     gap: var(--base-font-size);
 
     min-height: none;
+
+    cursor: pointer;
+
+    outline-width: var(--_outline-size, 1px);
+    outline-style: var(--_outline-style, solid);
+    outline-color: var(--_outline-clr, transparent);
+
+    border-radius: calc(var(--base-border-radius) * 0.5);
+
+    will-change: color, background-color, opacity, box-shadow, outline;
+    transition-property: color, background-color, opacity, box-shadow, outline;
+
+    background-color: var(--_bg-color);
+
+    box-shadow:
+        var(--_ring-offset-size, 0 0 0 0) var(--_clr-ring-offset, transparent),
+        var(--_ring-size, 0 0 0 0) var(--_clr-ring, transparent),
+        var(--_box-shadow, 0 0 0 0);
 
     border: 1px solid
         hsl(var(--_border-color, var(--clr-primary-purplish-blue)) / var(--_border-opacity, 0.25));
@@ -27,11 +45,39 @@
 }
 
 .plan-btn:hover,
-.plan-btn[data-active="true"] {
+.plan-btn[data-chosen=true]  {
     --_border-opacity: 1;
 
     background-color: hsl(var(--clr-primary-purplish-blue) / 0.075);
 }
-#pla n [data-plan]:not([data-chosen="true"]) {
+
+.plan-btn input[type="radio"] {
+    --_clr-outline: transparent;
+    --_clr-ring: transparent;
+    --_clr-ring-offset: transparent;
+
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    border: none;
+
+    cursor: pointer;
+
+    z-index: -1;
+}
+
+.plan-btn:focus-within {
+    --_ring-size: var(--ring-size, 0px 0px 0px 8px);
+    --_clr-ring: var(--clr-ring, currentColor);
+    --_ring-offset-size: var(--ring-offset-size, 0px 0px 0px 6px);
+    --_clr-ring-offset: var(--clr-ring-offset, hsl(var(--clr-neutral-white)));
+
+    --_outline-size: max(2px, 0.08em);
+    --_outline-style: solid;
+    --_outline-clr: var(--_bg-color);
+}
+
+#plan [data-plan]:not([data-chosen="true"]) {
     color: hsl(var(--clr-neutral-cool-gray) / var(--_text-opacity, 1));
 }
